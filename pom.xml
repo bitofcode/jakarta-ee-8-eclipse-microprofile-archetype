@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>9</version>
+    <relativePath/>
+  </parent>
 
   <groupId>com.bitofcode</groupId>
   <artifactId>jakarta-ee-8-eclipse-microprofile-archetype</artifactId>
@@ -8,6 +16,45 @@
   <packaging>maven-archetype</packaging>
 
   <name>jakarta-ee-8-eclipse-microprofile-archetype</name>
+  <description>Jakarta EE with MicroProfile project quickstart template. Clean, lean and minimalistic.</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <url>http://bitofcode.com</url>
+
+  <organization>
+    <name>BitOfCode</name>
+    <url>http://bitofcode.com</url>
+  </organization>
+
+  <inceptionYear>2021</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Wassim Akachi</name>
+      <organization>wassimakachi.com</organization>
+      <organizationUrl>http://wassimakachi.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:bitofcode/jakarta-ee-8-eclipse-microprofile-archetype.git</connection>
+    <url>https://github.com/bitofcode/jakarta-ee-8-eclipse-microprofile-archetype</url>
+    <developerConnection>scm:git:git@github.com:bitofcode/jakarta-ee-8-eclipse-microprofile-archetype.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 
   <build>
     <extensions>
@@ -17,6 +64,45 @@
         <version>3.2.0</version>
       </extension>
     </extensions>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <tagNameFormat>v@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+    </plugins>
 
     <pluginManagement>
       <plugins>
