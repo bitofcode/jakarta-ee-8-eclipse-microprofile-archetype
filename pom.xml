@@ -12,10 +12,9 @@
 
   <groupId>com.bitofcode</groupId>
   <artifactId>jakarta-ee-8-eclipse-microprofile-archetype</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
-
-  <name>jakarta-ee-8-eclipse-microprofile-archetype</name>
+  <name>${project.groupId}:${project.artifactId}</name>
   <description>Jakarta EE with MicroProfile project quickstart template. Clean, lean and minimalistic.</description>
 
   <properties>
@@ -35,9 +34,8 @@
 
   <licenses>
     <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
     </license>
   </licenses>
 
@@ -49,12 +47,32 @@
     </developer>
   </developers>
 
+  <contributors>
+    <contributor>
+      <name>Wassim Akachi</name>
+      <email>wassim@wassimakachi.com</email>
+      <timezone>Central European Standard Time (GMT+1)</timezone>
+      <url>http://wassimakachi.com</url>
+    </contributor>
+  </contributors>
+
   <scm>
     <connection>scm:git:git@github.com:bitofcode/jakarta-ee-8-eclipse-microprofile-archetype.git</connection>
     <url>https://github.com/bitofcode/jakarta-ee-8-eclipse-microprofile-archetype</url>
     <developerConnection>scm:git:git@github.com:bitofcode/jakarta-ee-8-eclipse-microprofile-archetype.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
   <build>
     <extensions>
