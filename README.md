@@ -1,3 +1,5 @@
+# This project is moved to => https://github.com/bitofcode/archetype-jakartaee-microprofile
+
 # JakartaEE 8 and Eclipse Microprofile Maven Archetype
 
 Usage:
