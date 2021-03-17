@@ -14,5 +14,9 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
 
+  <modules>
+    <module>${rootArtifactId}-app</module>
+    <module>${rootArtifactId}-st</module>
+  </modules>
 
 </project>

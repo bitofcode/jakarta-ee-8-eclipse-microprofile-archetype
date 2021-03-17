@@ -27,7 +27,6 @@
         <include>mvnw.cmd</include>
         <include>.editorconfig</include>
         <include>.gitignore</include>
-        <include>vorlage.iml</include>
         <include>mvnw</include>
       </includes>
     </fileSet>
@@ -68,12 +67,6 @@
           <directory>src/test/java</directory>
           <includes>
             <include>**/*.java</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory></directory>
-          <includes>
-            <include>vorlage-app.iml</include>
           </includes>
         </fileSet>
       </fileSets>

@@ -5,7 +5,7 @@
 
   <groupId>com.bitofcode</groupId>
   <artifactId>jakarta-ee-8-eclipse-microprofile-archetype</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>maven-archetype</packaging>
 
   <name>${project.groupId}:${project.artifactId}</name>
@@ -99,9 +99,8 @@
         <executions>
           <execution>
             <id>attach-sources</id>
-            <phase>verify</phase>
             <goals>
-              <goal>jar-no-fork</goal>
+              <goal>jar</goal>
             </goals>
           </execution>
         </executions>
